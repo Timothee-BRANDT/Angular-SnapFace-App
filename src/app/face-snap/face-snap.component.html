@@ -1,0 +1,9 @@
+<h2>{{ title }}</h2>
+<p> Mis en ligne le : {{ createdDate }}</p>
+<!-- attribute biding, usefull if imageUrl and title are not string-->
+<img [src]="imageUrl" [alt]="title">
+<p> {{ description }}</p>
+<p>
+     <button (click)="onSnap()"> {{snapTitle}} </button>
+     snaps {{ snaps }}
+</p>
