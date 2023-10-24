@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, interval } from 'rxjs';
-import { map, filter, tap } from 'rxjs/operators'
 
 @Component({
   selector: 'app-root',
@@ -9,20 +8,9 @@ import { map, filter, tap } from 'rxjs/operators'
 })
 export class AppComponent implements OnInit {
 
-  interval$!: Observable<string>;
+  interval$!: Observable<number>;
 
   ngOnInit() {
-    this.interval$ = interval(1000).pipe(
-      filter(value => value % 3 === 0),
-      map(value => value % 2 === 0 ?
-      `Je suis ${value} et je suis pair` :
-      ` Je suis ${value} et je suis impair`
-      ),
-      tap(lol => this.logger(lol)),
-    );
-  }
-
-  logger(text: string) {
-    console.log(`Log: ${text}`);
+    // this.interval$ = interval(1000);
   }
 }
